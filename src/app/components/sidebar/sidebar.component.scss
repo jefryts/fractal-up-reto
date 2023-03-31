@@ -1,0 +1,54 @@
+.sidebar {
+  padding: 50px 40px;
+  background: #662323;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  flex-direction: column;
+  gap: 30px;
+  width: 330px;
+  min-width: 330px;
+  height: 100%;
+
+  .menu-group {
+    &__title {
+      font-size: 22px;
+      line-height: 28px;
+      margin-bottom: 4px;
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      &__item {
+        font-size: 16px;
+        line-height: 20px;
+        position: relative;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        &--selected {
+          &::after {
+            display: block;
+            position: absolute;
+            content: "";
+            width: 5px;
+            height: 20px;
+            top: 0;
+            left: -40px;
+            background-color: #e86060;
+            cursor: auto;
+          }
+        }
+
+        &:hover,
+        &--selected {
+          color: #e86060;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+:host {
+  display: inline-block;
+}
+
+$height-bar: 6px;
+
+.slider {
+  width: 100%;
+  margin: 20px 0;
+  position: relative;
+  height: 30px;
+
+  &-input {
+    width: 100%;
+    height: $height-bar;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #ddd;
+    border-radius: 100px;
+    outline: none;
+    margin: 0;
+    padding: 0;
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      background-color: #ffffff;
+      border: 1px solid rgba(255, 109, 109, 0.2);
+      border-radius: 50%;
+      cursor: pointer;
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  &-value {
+    position: absolute;
+    transform: translate(-50%, -100%);
+    padding: 2px;
+    color: #fff;
+    top: 10px;
+  }
+}
+
+.progress-bar {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: $height-bar;
+  z-index: 1;
+  border-radius: 10px;
+  transform: translateY(-50%);
+}

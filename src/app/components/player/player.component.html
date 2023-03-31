@@ -1,0 +1,55 @@
+<div class="player-wrapper" *ngIf="currentSong">
+  <div class="player-info">
+    <img class="player-info__img" [src]="getCoverAlbum(currentSong)" alt="" />
+    <div class="song-info text-white">
+      <p class="song-info__title font-bold">{{ currentSong.title }}</p>
+      <p class="song-info__subtitle">
+        {{ currentSong.artist!.name }} - {{ currentSong.album!.title }}
+      </p>
+    </div>
+  </div>
+  <div class="player-controls">
+    <button
+      type="button"
+      class="player-controls__control"
+      [disabled]="disallowPrevious()"
+      (click)="previous()"
+    >
+      <fa-icon [icon]="backwardIcon" [styles]="{ color: 'white' }"></fa-icon>
+    </button>
+    <button
+      type="button"
+      class="player-controls__control player-controls__control--play"
+      *ngIf="!statePlayer?.playing"
+      (click)="play()"
+    >
+      <fa-icon [icon]="playIcon" [styles]="{ color: 'white', 'margin-left': '4px' }"></fa-icon>
+    </button>
+    <button
+      type="button"
+      class="player-controls__control player-controls__control--play"
+      (click)="pause()"
+      *ngIf="statePlayer?.playing"
+    >
+      <fa-icon [icon]="pauseIcon" [styles]="{ color: 'white' }"></fa-icon>
+    </button>
+    <button
+      type="button"
+      class="player-controls__control"
+      [disabled]="disallowNext()"
+      (click)="next()"
+    >
+      <fa-icon [icon]="fordwardIcon" [styles]="{ color: 'white' }"></fa-icon>
+    </button>
+  </div>
+  <div class="player-volume">
+    <slider class="player-volume__slider w-[100px]"></slider>
+    <button class="player-volume__mute" type="button" (click)="changeMuted()">
+      <fa-icon
+        [icon]="muted ? volumeOnIcon : volumeOffIcon"
+        [styles]="{ color: 'white' }"
+        size="2x"
+      ></fa-icon>
+    </button>
+  </div>
+</div>

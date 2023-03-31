@@ -1,0 +1,19 @@
+<div class="slider">
+  <input
+    type="range"
+    class="slider-input"
+    [min]="min"
+    [max]="max"
+    [step]="step"
+    [(ngModel)]="value"
+    (input)="onSliderChange($event)"
+  />
+
+  <div class="slider-value" [style.left.%]="fixLeft(value)" [style.bottom.px]="20"></div>
+
+  <div
+    class="progress-bar"
+    [style.width.%]="withProgressBar(value)"
+    [ngStyle]="{ 'background-color': colorSlider }"
+  ></div>
+</div>

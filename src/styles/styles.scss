@@ -1,0 +1,35 @@
+// Tailwind CSS
+@import "tailwindcss/base";
+@import "tailwindcss/utilities";
+
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap");
+
+@import "./variables";
+
+* {
+  &::before,
+  &::after {
+    border-color: transparent;
+  }
+
+  font-family: "Quicksand", sans-serif;
+}
+
+[type="text"],
+[type="email"],
+[type="url"],
+[type="password"],
+[type="number"],
+[type="date"],
+[type="datetime-local"],
+[type="month"],
+[type="search"],
+[type="tel"],
+[type="time"],
+[type="week"],
+[multiple],
+textarea,
+select {
+  padding: 0;
+  border: 0;
+}
