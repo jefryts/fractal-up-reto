@@ -3,14 +3,15 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
     "prettier": "prettier",
     "prettier:fix": "prettier --config ./.prettierrc.json --write \"src/**/*.{js,jsx,ts,scss,json,html}\"",
-    "prettier:check": "prettier --config ./.prettierrc.json --check  \"src/**/*.{js,jsx,ts,scss,json,html}\""
+    "prettier:check": "prettier --config ./.prettierrc.json --check  \"src/**/*.{js,jsx,ts,scss,json,html}\"",
+    "heroku-postbuild": "ng build --prod"
   },
   "private": true,
   "dependencies": {
@@ -25,7 +26,9 @@
     "@fortawesome/angular-fontawesome": "^0.10.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "express": "^4.18.2",
     "moment": "^2.29.4",
+    "path": "^0.12.7",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -58,5 +61,9 @@
     "postcss": "^8.4.21",
     "tailwindcss": "^3.3.0",
     "typescript": "~4.7.2"
+  },
+  "engines": {
+    "node": "16.17.0",
+    "npm": "8.15.0"
   }
 }
