@@ -10,7 +10,8 @@ import { STATE_LIST_FOUND_SONGS } from '../constants/all';
   providedIn: 'root',
 })
 export class DeezerService {
-  private BASE_URL = 'https://cors-anywhere.herokuapp.com/https://api.deezer.com/';
+  private BASE_URL = 'https://api.deezer.com/';
+  // private BASE_URL = 'https://cors-anywhere.herokuapp.com/https://api.deezer.com/';
 
   constructor(private httpClient: HttpClient, private listService: ListService) {}
 
