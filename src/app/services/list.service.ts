@@ -8,7 +8,7 @@ import { LocalStorageService } from './local-storage.service';
   providedIn: 'root',
 })
 export class ListService {
-  private listRecentSongs: Song[] = this.storageService.get(NAME_OBJECT_STORAGE);
+  private listRecentSongs: Song[] = this.storageService.get(NAME_OBJECT_STORAGE) || [];
 
   private listRecentChange: BehaviorSubject<Song[]> = new BehaviorSubject(this.listRecentSongs);
 
